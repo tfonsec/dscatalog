@@ -22,6 +22,7 @@ import javax.persistence.Table;
 public class Product implements Serializable {
    private static final long serialVersionUID = 1L;
    
+   
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
@@ -35,7 +36,7 @@ public class Product implements Serializable {
    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
    private Instant date;
 
-   //criação da tabela de associação relacional
+   //criação da tabela de associação relacional muito para muitos
   @ManyToMany
   @JoinTable(name = "tb_product_category",
          joinColumns = @JoinColumn(name = "product_id"),
