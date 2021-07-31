@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,11 +27,12 @@ public class User implements Serializable{
 	private Long id;
 	private String firstName;
 	private String lastName;
+	@Column(unique = true)
 	private String email;
 	private String password;
 	
 	
-	 @ManyToMany
+	 @ManyToMany(fetch = FetchType.EAGER) //forcar que sempre que buscar o usuário no banco ja vai vir pendurado os roles(perfis)
 	 @JoinTable(name = "tb_user_role",
 	    joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -42,7 +45,7 @@ public class User implements Serializable{
 		}
 
 	public User(Long id, String firstName, String lastName, String email, String password) {
-		super();
+		
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -91,6 +94,12 @@ public class User implements Serializable{
 	}
 
 	
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	
+
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
