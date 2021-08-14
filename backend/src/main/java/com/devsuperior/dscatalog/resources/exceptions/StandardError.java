@@ -13,6 +13,7 @@ public class StandardError implements Serializable{
 	private String Message;
 	private String path;
 	
+	
 	public StandardError() {
 	}
 
