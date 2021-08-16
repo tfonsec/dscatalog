@@ -9,6 +9,6 @@ import com.devsuperior.dscatalog.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	User findByEmail(String email); //busca no banco de dados um usuário por e-mail
+	User findByEmail(String email); //metodo que busca no banco de dados um usuário por e-mail
 	
 }
