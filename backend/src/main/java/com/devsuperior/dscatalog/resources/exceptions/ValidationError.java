@@ -13,7 +13,7 @@ public class ValidationError extends StandardError {
 		return erros;
 	}
 	
-	public void addError(String fieldName, String message) { //sempre que quiser add um novo erro vai ter que passar por aqui
+	public void addError(String fieldName, String message) { //sempre que quiser add um novo erro na lista vai ter que passar por aqui
 		erros.add(new FieldMessage(fieldName, message)); // add um fieldmessagem na lista de erro
 		
 	}

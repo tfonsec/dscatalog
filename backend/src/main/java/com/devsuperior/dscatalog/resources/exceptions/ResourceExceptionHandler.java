@@ -52,7 +52,7 @@ public class ResourceExceptionHandler {
        err.setMessage(e.getMessage());
        err.setPath(request.getRequestURI());
       
-       for (FieldError f :e.getBindingResult().getFieldErrors()) {
+       for (FieldError f :e.getBindingResult().getFieldErrors()) { //lista de erro interna do beans validation
     	   err.addError(f.getField(), f.getDefaultMessage());
        }
        
