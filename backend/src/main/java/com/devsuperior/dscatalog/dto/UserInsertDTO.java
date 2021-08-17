@@ -6,7 +6,7 @@ import com.devsuperior.dscatalog.services.validation.UserInsertValid;
 
 
 
-@UserInsertValid // verificaão se o e-mail que estou inserindo já existe no banco
+@UserInsertValid // verificão se o e-mail que estou inserindo já existe no banco
 public class UserInsertDTO extends UserDTO {
 	   private static final long serialVersionUID = 1L;
 	   
